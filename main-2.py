@@ -1,6 +1,7 @@
 import cv2
-import numpy as np
 import pyautogui
+import subprocess
+import time
 
 
 def detect_and_click(image_path):
@@ -42,6 +43,12 @@ def detect_and_click(image_path):
     cv2.imshow('Detected Features', image)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+
+    # 启动外部程序
+    subprocess.Popen(r'C:\Users\Wensley\Desktop\1.exe')
+
+    # 等待程序启动，可以根据实际情况调整等待时间
+    time.sleep(5)
 
     # 模拟鼠标点击按钮中心
     pyautogui.click(button_center)
